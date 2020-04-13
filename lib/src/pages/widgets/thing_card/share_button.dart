@@ -23,16 +23,11 @@ class ShareButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'Compartilhar',
-                style: TextStyle(
-                  fontSize: 12,
-                ),
-              ),
+              Text('Compartilhar'),
               SizedBox(width: 5),
               Image.asset(
                 'assets/img/heart.png',
-                height: 25,
+                height: 30,
               ),
             ],
           ),

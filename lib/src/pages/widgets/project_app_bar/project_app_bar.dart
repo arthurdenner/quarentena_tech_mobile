@@ -27,34 +27,34 @@ class ProjectAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              Image.asset(
-                'assets/img/jedi.png',
-                height: 60,
+              Padding(
+                padding: EdgeInsets.only(top: 5),
+                child: Image.asset(
+                  'assets/img/jedi.png',
+                  height: 60,
+                ),
               ),
               SizedBox(width: 10),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      '#Quarentena.',
-                      style: TextStyle(
-                        color: AppColors.main,
-                        fontSize: 16,
-                      ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    '#Quarentena.',
+                    style: TextStyle(
+                      color: AppColors.main,
+                      fontSize: 16,
                     ),
-                    Text(
-                      'Tech',
-                      style: TextStyle(
-                        color: AppColors.main,
-                        fontSize: 16,
-                      ),
+                  ),
+                  SizedBox(height: 5),
+                  Text(
+                    'Tech',
+                    style: TextStyle(
+                      color: AppColors.main,
+                      fontSize: 16,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -71,9 +71,9 @@ class ProjectAppBar extends StatelessWidget {
         children: <Widget>[
           Image.asset(
             'assets/img/heart.png',
-            height: 40,
+            height: 45,
           ),
-          SizedBox(width: 10),
+          SizedBox(width: 15),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

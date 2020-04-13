@@ -25,7 +25,6 @@ class DetailsButton extends StatelessWidget {
             child: Text(
               'Detalhes',
               style: TextStyle(
-                fontSize: 12,
                 color: Colors.white,
               ),
             ),

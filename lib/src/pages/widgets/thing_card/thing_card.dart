@@ -30,7 +30,7 @@ class ThingCard extends StatelessWidget {
             ThingCardHeader(
               thing: thing,
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Text(
               thing.content,
               style: TextStyle(

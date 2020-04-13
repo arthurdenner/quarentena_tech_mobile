@@ -28,29 +28,30 @@ class ThingCardHeader extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Row(
-                children: thing.categories.map((category) {
-                  return Container(
-                    color: getColorByCategory(category),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 5,
-                    ),
-                    child: Text(
-                      category,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-                    ),
-                  );
-                }).toList(),
+                children: thing.categories.map(_buildCategory).toList(),
               ),
             ],
           ),
         ),
-        SizedBox(width: 20),
         _buildImage(thing),
       ],
+    );
+  }
+
+  Widget _buildCategory(String category) {
+    return Container(
+      color: getColorByCategory(category),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 5,
+      ),
+      child: Text(
+        category,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 12,
+        ),
+      ),
     );
   }
 

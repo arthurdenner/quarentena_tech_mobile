@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 const BASE_URL = 'https://quarentena.tech';
 
 class AppSizes {
-  static const logo = 50.0;
+  static const logo = 80.0;
   static const blur = 3.0;
 }
 
