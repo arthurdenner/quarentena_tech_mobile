@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/pages/utils/constants.dart';
+import 'package:quarentena_tech_mobile/src/pages/widgets/animated_heart.dart';
 
 class ProjectGoal extends StatelessWidget {
   const ProjectGoal({Key key}) : super(key: key);
@@ -12,11 +13,15 @@ class ProjectGoal extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(top: 10),
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.symmetric(
+            horizontal: 30,
+            vertical: 20,
+          ),
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
               color: Colors.black,
+              width: 3,
             ),
           ),
           child: Column(
@@ -51,7 +56,7 @@ class ProjectGoal extends StatelessWidget {
                     TextSpan(
                       text: 'CollabCode',
                       style: TextStyle(
-                        color: AppColors.emphasis,
+                        color: AppColors.main,
                       ),
                     ),
                     TextSpan(
@@ -62,6 +67,8 @@ class ProjectGoal extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 14),
+              AnimatedHeart(),
             ],
           ),
         ),
