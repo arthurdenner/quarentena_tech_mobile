@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
+import 'package:quarentena_tech_mobile/src/pages/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_goal.dart';
+import 'package:quarentena_tech_mobile/src/pages/widgets/things_list.dart';
 import 'package:quarentena_tech_mobile/src/services/api.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFeae6da),
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Image.asset('assets/img/jedi.png'),
@@ -37,6 +39,11 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: <Widget>[
                 ProjectGoal(),
+                SizedBox(height: 30),
+                ThingsList(
+                  status: _status,
+                  things: _things,
+                ),
               ],
             ),
           ),
