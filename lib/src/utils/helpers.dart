@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 String getLogoUrl(String relativeUrl) => BASE_URL + relativeUrl;
 
@@ -13,4 +14,16 @@ Color getDarkerColorByCategory(String category) {
   return darkerColorMap.containsKey(category)
       ? darkerColorMap[category]
       : darkerColorMap['default'];
+}
+
+Future<void> openUrl(String url) async {
+  try {
+    final isValid = await canLaunch(url);
+
+    if (isValid) {
+      launch(url);
+    }
+  } catch (e) {
+    print(e);
+  }
 }

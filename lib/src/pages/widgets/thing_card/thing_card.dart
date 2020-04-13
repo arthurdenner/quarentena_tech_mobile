@@ -38,7 +38,9 @@ class ThingCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 40),
-            ThingCardFooter(),
+            ThingCardFooter(
+              thing: thing,
+            ),
           ],
         ),
       ),
