@@ -20,10 +20,20 @@ class AppColors {
   static const menu = Color.fromARGB(230, 242, 90, 112);
 }
 
+const AppCategories = ['cursos', 'twitch', 'youtube', 'comunidade'];
+
 Map<String, Color> colorMap = {
   'default': Colors.red,
   'comunidade': Color(0xFF209cee),
   'cursos': Color(0xFF92cc41),
   'twitch': Color(0xFF9147ff),
   'youtube': AppColors.highlight,
+};
+
+Map<String, Color> darkerColorMap = {
+  'default': Colors.red,
+  'comunidade': Color(0xFF006bb3),
+  'cursos': Color(0xFF4aa52e),
+  'twitch': Color(0xFF5b1eb6),
+  'youtube': AppColors.highlightSplash,
 };

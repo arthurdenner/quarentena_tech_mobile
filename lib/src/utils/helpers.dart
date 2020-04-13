@@ -8,3 +8,9 @@ Color getColorByCategory(String category) {
       ? colorMap[category]
       : colorMap['default'];
 }
+
+Color getDarkerColorByCategory(String category) {
+  return darkerColorMap.containsKey(category)
+      ? darkerColorMap[category]
+      : darkerColorMap['default'];
+}
