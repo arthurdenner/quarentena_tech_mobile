@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 
-class ProjectAppBar extends StatefulWidget {
+class ProjectAppBar extends StatelessWidget {
   ProjectAppBar({Key key}) : super(key: key);
 
-  @override
-  _ProjectAppBarState createState() => _ProjectAppBarState();
-}
-
-class _ProjectAppBarState extends State<ProjectAppBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,30 +58,33 @@ class _ProjectAppBarState extends State<ProjectAppBar> {
               ),
             ],
           ),
-          _buildMenu(),
+          _buildMenu(context),
         ],
       ),
     );
   }
 
-  Widget _buildMenu() {
-    return Row(
-      children: <Widget>[
-        Image.asset(
-          'assets/img/heart.png',
-          height: 40,
-        ),
-        SizedBox(width: 10),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _buildMenuLetter('M'),
-            _buildMenuLetter('E'),
-            _buildMenuLetter('N'),
-            _buildMenuLetter('U'),
-          ],
-        ),
-      ],
+  Widget _buildMenu(BuildContext context) {
+    return GestureDetector(
+      onTap: () => Scaffold.of(context).openEndDrawer(),
+      child: Row(
+        children: <Widget>[
+          Image.asset(
+            'assets/img/heart.png',
+            height: 40,
+          ),
+          SizedBox(width: 10),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _buildMenuLetter('M'),
+              _buildMenuLetter('E'),
+              _buildMenuLetter('N'),
+              _buildMenuLetter('U'),
+            ],
+          ),
+        ],
+      ),
     );
   }
 
