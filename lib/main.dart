@@ -14,6 +14,7 @@ class QuarentenaTech extends StatelessWidget {
       title: 'Quarentena Tech',
       theme: ThemeData(
         fontFamily: 'Press Start 2P',
+        dividerColor: AppColors.neutral,
         appBarTheme: AppBarTheme(
           textTheme: TextTheme(
             headline6: TextStyle(
@@ -21,6 +22,9 @@ class QuarentenaTech extends StatelessWidget {
               fontFamily: 'Press Start 2P',
             ),
           ),
+        ),
+        buttonTheme: ButtonThemeData(
+          buttonColor: AppColors.interactive,
         ),
       ),
       home: HomePage(),
