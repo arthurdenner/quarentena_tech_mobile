@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
+import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/project_app_bar.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_goal.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/things_list.dart';
 import 'package:quarentena_tech_mobile/src/services/api.dart';
@@ -28,61 +29,30 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: AppColors.background,
       endDrawer: Text('???'),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: Image.asset('assets/img/jedi.png'),
-        title: Text('#Quarentena.Tech'),
-        actions: _buildMenu(),
-      ),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                ProjectGoal(),
-                SizedBox(height: 30),
-                ThingsList(
-                  status: _status,
-                  things: _things,
+        child: Column(
+          children: <Widget>[
+            ProjectAppBar(),
+            SizedBox(height: 20),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    children: <Widget>[
+                      ProjectGoal(),
+                      SizedBox(height: 30),
+                      ThingsList(
+                        status: _status,
+                        things: _things,
+                      ),
+                    ],
+                  ),
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
-      ),
-    );
-  }
-
-  List<Widget> _buildMenu() {
-    return [
-      Row(
-        children: <Widget>[
-          Image.asset(
-            'assets/img/heart.png',
-            height: 40,
-          ),
-          SizedBox(width: 10),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _buildMenuLetter('M'),
-              _buildMenuLetter('E'),
-              _buildMenuLetter('N'),
-              _buildMenuLetter('U'),
-            ],
-          ),
-        ],
-      ),
-    ];
-  }
-
-  Text _buildMenuLetter(String letter) {
-    return Text(
-      letter,
-      style: TextStyle(
-        color: Colors.black,
-        fontSize: 12,
       ),
     );
   }
