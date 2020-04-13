@@ -16,8 +16,8 @@ class QuarentenaTech extends StatelessWidget {
         appBarTheme: AppBarTheme(
           textTheme: TextTheme(
             headline6: TextStyle(
-              fontFamily: 'Press Start 2P',
               color: Color(0xFFf25a70),
+              fontFamily: 'Press Start 2P',
             ),
           ),
         ),
