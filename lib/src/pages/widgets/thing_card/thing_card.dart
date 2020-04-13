@@ -15,30 +15,24 @@ class ThingCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             ThingCardHeader(
               thing: thing,
             ),
-            _buildDivider(),
-            _buildBody(thing),
-            _buildDivider(),
+            SizedBox(height: 30),
+            Text(
+              thing.content,
+              style: TextStyle(
+                height: 1.2,
+              ),
+            ),
+            SizedBox(height: 40),
             ThingCardFooter(),
           ],
         ),
-      ),
-    );
-  }
-
-  Divider _buildDivider() => const Divider(height: 30);
-
-  Widget _buildBody(Thing thing) {
-    return Text(
-      thing.content,
-      style: TextStyle(
-        height: 1.2,
       ),
     );
   }

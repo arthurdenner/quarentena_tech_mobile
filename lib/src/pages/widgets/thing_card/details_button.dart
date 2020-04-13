@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 
-class ShareButton extends StatelessWidget {
-  const ShareButton({Key key}) : super(key: key);
+class DetailsButton extends StatelessWidget {
+  const DetailsButton({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 40,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
@@ -15,11 +15,11 @@ class ShareButton extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.interactiveSplash,
+            color: AppColors.highlightSplash,
             offset: Offset(0.0, 0.0),
           ),
           BoxShadow(
-            color: AppColors.interactive,
+            color: AppColors.highlight,
             offset: Offset(-3.0, -3.0),
             spreadRadius: -3.0,
             blurRadius: 0,
@@ -27,22 +27,16 @@ class ShareButton extends StatelessWidget {
         ],
       ),
       child: FlatButton(
+        padding: EdgeInsets.zero,
         onPressed: () {},
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Compartilhar',
-              style: TextStyle(
-                fontSize: 12,
-              ),
+        child: Center(
+          child: Text(
+            'Detalhes',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.white,
             ),
-            SizedBox(width: 5),
-            Image.asset(
-              'assets/img/heart.png',
-              height: 25,
-            ),
-          ],
+          ),
         ),
       ),
     );
