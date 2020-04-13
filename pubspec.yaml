@@ -20,6 +20,7 @@ dependencies:
   dio: 3.0.9
   flutter_svg: 0.17.4
   theme_mode_handler: 1.0.0
+  url_launcher: 5.4.2
   flutter:
     sdk: flutter
 
