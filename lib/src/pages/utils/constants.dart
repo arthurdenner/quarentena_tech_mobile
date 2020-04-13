@@ -7,3 +7,11 @@ class AppColors {
   static const emphasis = Color(0xFF7c5e99);
   static const main = Color(0xFFf25a70);
 }
+
+Map<String, Color> colorMap = {
+  'default': Colors.red,
+  'comunidade': Color(0xFF209cee),
+  'cursos': Color(0xFF92cc41),
+  'twitch': Color(0xFF9147ff),
+  'youtube': Color(0xFFe76e55),
+};

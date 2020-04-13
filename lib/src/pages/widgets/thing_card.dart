@@ -23,7 +23,31 @@ class ThingCard extends StatelessWidget {
             _buildImage(thing),
             SizedBox(width: 20),
             Flexible(
-              child: Text(thing.title),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  Text(thing.title),
+                  SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: thing.categories.map((category) {
+                      return Container(
+                        color: getColorByCategory(category),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
+                        child: Text(
+                          category,
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
