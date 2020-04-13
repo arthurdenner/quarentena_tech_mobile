@@ -22,6 +22,15 @@ class ProjectFilters extends StatelessWidget {
           Text('Categorias'),
           SizedBox(height: 20),
           ...AppCategories.map(_buildCategory).toList(),
+          SizedBox(height: 20),
+          NESButton(
+            backgroundColor: Colors.white,
+            shadowColor: Color(0xFFadafbc),
+            child: FlatButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text('Filtrar'),
+            ),
+          ),
         ],
       ),
     );

@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(height: 30),
                       ThingsList(
                         status: _status,
-                        things: _things,
+                        things: _getThings(),
                       ),
                     ],
                   ),
@@ -81,6 +81,18 @@ class _HomePageState extends State<HomePage> {
       // TODO: Improve error handling
       print(e);
     }
+  }
+
+  List<Thing> _getThings() {
+    if (_activeFilters.isEmpty) {
+      return _things;
+    }
+
+    return _things.where((thing) {
+      return thing.categories.any((category) {
+        return _activeFilters.contains(category);
+      });
+    }).toList();
   }
 
   void _handleFilters(String filter) {
