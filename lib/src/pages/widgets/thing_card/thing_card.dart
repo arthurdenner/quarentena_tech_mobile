@@ -13,7 +13,15 @@ class ThingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      margin: EdgeInsets.only(bottom: 30),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+      ),
       child: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
