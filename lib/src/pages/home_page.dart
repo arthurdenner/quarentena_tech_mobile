@@ -27,10 +27,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
+      endDrawer: Text('???'),
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Image.asset('assets/img/jedi.png'),
         title: Text('#Quarentena.Tech'),
+        actions: _buildMenu(),
       ),
       body: SafeArea(
         child: Padding(
@@ -48,6 +50,39 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  List<Widget> _buildMenu() {
+    return [
+      Row(
+        children: <Widget>[
+          Image.asset(
+            'assets/img/heart.png',
+            height: 40,
+          ),
+          SizedBox(width: 10),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _buildMenuLetter('M'),
+              _buildMenuLetter('E'),
+              _buildMenuLetter('N'),
+              _buildMenuLetter('U'),
+            ],
+          ),
+        ],
+      ),
+    ];
+  }
+
+  Text _buildMenuLetter(String letter) {
+    return Text(
+      letter,
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 12,
       ),
     );
   }
