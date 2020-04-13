@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
-import 'package:quarentena_tech_mobile/src/pages/utils/constants.dart';
+import 'package:quarentena_tech_mobile/src/pages/widgets/thing_card.dart';
 
 class ThingsList extends StatelessWidget {
   const ThingsList({
@@ -25,14 +25,7 @@ class ThingsList extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: things.map((thing) {
-        return Card(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Text(thing.title),
-          ),
-        );
-      }).toList(),
+      children: things.map((thing) => ThingCard(thing: thing)).toList(),
     );
   }
 }

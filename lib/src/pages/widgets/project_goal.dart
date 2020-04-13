@@ -60,7 +60,7 @@ class ProjectGoal extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: ' criou esse site com o objetivo de juntar todas'
+                      text: ' criou esse site com o objetivo de juntar todas '
                           'essas iniciativas maravilhosas que estão nos ajudando a'
                           'passar por essa crise de uma forma mais feliz!',
                     ),

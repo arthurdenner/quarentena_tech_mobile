@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.all(20),
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
