@@ -20,7 +20,12 @@ class ThingCardHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(thing.title),
+              Text(
+                thing.title,
+                style: TextStyle(
+                  color: AppColors.main,
+                ),
+              ),
               SizedBox(height: 10),
               Row(
                 children: thing.categories.map((category) {
@@ -52,16 +57,18 @@ class ThingCardHeader extends StatelessWidget {
   Widget _buildImage(Thing thing) {
     final isSvg = thing.logo.contains('.svg');
 
-    return isSvg
-        ? SvgPicture.network(
-            getLogoUrl(thing.logo),
-            semanticsLabel: 'Logo de ${thing.title}',
-            height: AppSizes.logo,
-          )
-        : Image.network(
-            getLogoUrl(thing.logo),
-            semanticLabel: 'Logo de ${thing.title}',
-            height: AppSizes.logo,
-          );
+    return ClipOval(
+      child: isSvg
+          ? SvgPicture.network(
+              getLogoUrl(thing.logo),
+              semanticsLabel: 'Logo de ${thing.title}',
+              height: AppSizes.logo,
+            )
+          : Image.network(
+              getLogoUrl(thing.logo),
+              semanticLabel: 'Logo de ${thing.title}',
+              height: AppSizes.logo,
+            ),
+    );
   }
 }
