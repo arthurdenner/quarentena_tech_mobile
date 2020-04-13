@@ -16,6 +16,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _activeFilters = <String>[];
   final _api = Api();
   String _status = 'idle';
   List<Thing> _things = [];
@@ -31,6 +32,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: AppColors.background,
       endDrawer: ProjectDrawer(
+        activeFilters: _activeFilters,
+        onChangedFilter: _handleFilters,
         onChanged: _setTheme,
         value: ThemeModeHandler.of(context).themeMode == ThemeMode.dark,
       ),
@@ -78,6 +81,16 @@ class _HomePageState extends State<HomePage> {
       // TODO: Improve error handling
       print(e);
     }
+  }
+
+  void _handleFilters(String filter) {
+    setState(() {
+      if (_activeFilters.contains(filter)) {
+        _activeFilters.remove(filter);
+      } else {
+        _activeFilters.add(filter);
+      }
+    });
   }
 
   void _setTheme(bool value) {

@@ -4,7 +4,14 @@ import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 import 'package:quarentena_tech_mobile/src/widgets/nes_button.dart';
 
 class ProjectFilters extends StatelessWidget {
-  const ProjectFilters({Key key}) : super(key: key);
+  const ProjectFilters({
+    Key key,
+    @required this.activeFilters,
+    @required this.onChangedFilter,
+  }) : super(key: key);
+
+  final List<String> activeFilters;
+  final ValueChanged<String> onChangedFilter;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +28,9 @@ class ProjectFilters extends StatelessWidget {
   }
 
   Widget _buildCategory(String category) {
+    final isSelected = activeFilters.contains(category);
+    final image = isSelected ? 'full' : 'empty';
+
     return Container(
       height: 80,
       margin: EdgeInsets.all(5),
@@ -28,13 +38,13 @@ class ProjectFilters extends StatelessWidget {
         backgroundColor: getColorByCategory(category),
         shadowColor: getDarkerColorByCategory(category),
         child: FlatButton(
-          onPressed: () {},
+          onPressed: () => onChangedFilter(category),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Image.asset(
-                'assets/img/empty-star.png',
+                'assets/img/$image-star.png',
                 height: 30,
               ),
               SizedBox(height: 10),

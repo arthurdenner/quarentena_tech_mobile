@@ -4,10 +4,14 @@ import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets
 class ProjectDrawer extends StatelessWidget {
   const ProjectDrawer({
     Key key,
+    @required this.activeFilters,
+    @required this.onChangedFilter,
     @required this.onChanged,
     @required this.value,
   }) : super(key: key);
 
+  final List<String> activeFilters;
+  final ValueChanged<String> onChangedFilter;
   final ValueChanged<bool> onChanged;
   final bool value;
 
@@ -19,7 +23,10 @@ class ProjectDrawer extends StatelessWidget {
           children: <Widget>[
             _buildThemeAndClose(context),
             SizedBox(height: 20),
-            ProjectFilters(),
+            ProjectFilters(
+              activeFilters: activeFilters,
+              onChangedFilter: onChangedFilter,
+            ),
           ],
         ),
       ),
