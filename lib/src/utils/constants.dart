@@ -17,6 +17,7 @@ class AppColors {
   static const highlight = Color(0xFFe76e55);
   static const highlightSplash = Color(0xFF8c2022);
   static const neutral = Colors.black38;
+  static const menu = Color.fromARGB(230, 242, 90, 112);
 }
 
 Map<String, Color> colorMap = {

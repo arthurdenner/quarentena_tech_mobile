@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/project_app_bar.dart';
+import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets/project_drawer.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_goal.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/things_list.dart';
 import 'package:quarentena_tech_mobile/src/services/api.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
+import 'package:theme_mode_handler/theme_mode_handler.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -28,7 +30,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      endDrawer: Text('???'),
+      endDrawer: ProjectDrawer(
+        onChanged: _setTheme,
+        value: ThemeModeHandler.of(context).themeMode == ThemeMode.dark,
+      ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -73,5 +78,11 @@ class _HomePageState extends State<HomePage> {
       // TODO: Improve error handling
       print(e);
     }
+  }
+
+  void _setTheme(bool value) {
+    ThemeModeHandler.of(context).setThemeMode(
+      value ? ThemeMode.dark : ThemeMode.light,
+    );
   }
 }
