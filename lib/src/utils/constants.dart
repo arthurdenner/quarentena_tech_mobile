@@ -12,6 +12,7 @@ class AppColors {
   static const emphasis = Color(0xFF7c5e99);
   static const main = Color(0xFFf25a70);
   static const interactive = Color(0xFFf7d51d);
+  static const interactiveSplash = Color(0xFFe59400);
   static const highlight = Color(0xFFe76e55);
   static const neutral = Colors.black38;
 }

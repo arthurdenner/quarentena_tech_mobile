@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:quarentena_tech_mobile/src/pages/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/animated_heart.dart';
+import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 
 class ProjectGoal extends StatelessWidget {
   const ProjectGoal({Key key}) : super(key: key);

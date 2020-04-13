@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
-import 'package:quarentena_tech_mobile/src/pages/utils/constants.dart';
+import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 
 class Api {
   final _dio = Dio(

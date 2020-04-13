@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quarentena_tech_mobile/src/pages/utils/constants.dart';
+import 'package:quarentena_tech_mobile/src/pages/widgets/thing_card/share_button.dart';
+import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 
 class ThingCardFooter extends StatelessWidget {
   const ThingCardFooter({Key key}) : super(key: key);
@@ -9,26 +10,8 @@ class ThingCardFooter extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        RaisedButton(
-          onPressed: () {},
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Compartilhar',
-                style: TextStyle(
-                  fontSize: 12,
-                ),
-              ),
-              SizedBox(width: 5),
-              Image.asset(
-                'assets/img/heart.png',
-                height: 20,
-              ),
-            ],
-          ),
-        ),
-        SizedBox(width: 20),
+        ShareButton(),
+        SizedBox(height: 10),
         RaisedButton(
           color: AppColors.highlight,
           onPressed: () {},

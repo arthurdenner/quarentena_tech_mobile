@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
-import 'package:quarentena_tech_mobile/src/pages/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_goal.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/things_list.dart';
 import 'package:quarentena_tech_mobile/src/services/api.dart';
+import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
-import 'package:quarentena_tech_mobile/src/pages/utils/constants.dart';
-import 'package:quarentena_tech_mobile/src/pages/utils/helpers.dart';
+import 'package:quarentena_tech_mobile/src/utils/constants.dart';
+import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 
 class ThingCardHeader extends StatelessWidget {
   const ThingCardHeader({
@@ -15,19 +15,14 @@ class ThingCardHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        _buildImage(thing),
-        SizedBox(width: 20),
         Flexible(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(thing.title),
               SizedBox(height: 10),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
                 children: thing.categories.map((category) {
                   return Container(
                     color: getColorByCategory(category),
@@ -48,6 +43,8 @@ class ThingCardHeader extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(width: 20),
+        _buildImage(thing),
       ],
     );
   }
@@ -58,12 +55,12 @@ class ThingCardHeader extends StatelessWidget {
     return isSvg
         ? SvgPicture.network(
             getLogoUrl(thing.logo),
-            semanticsLabel: thing.logo,
+            semanticsLabel: 'Logo de ${thing.title}',
             height: AppSizes.logo,
           )
         : Image.network(
             getLogoUrl(thing.logo),
-            semanticLabel: thing.title,
+            semanticLabel: 'Logo de ${thing.title}',
             height: AppSizes.logo,
           );
   }
