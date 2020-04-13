@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quarentena_tech_mobile/src/utils/constants.dart';
+import 'package:quarentena_tech_mobile/src/widgets/nes_clipper.dart';
 
 class NESButton extends StatelessWidget {
   const NESButton({
@@ -14,27 +16,30 @@ class NESButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 2,
+    return ClipPath(
+      clipper: const NESClipper(),
+      child: Container(
+        height: 50,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.black,
+            width: AppSizes.border,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: shadowColor,
+              offset: Offset(0.0, 0.0),
+            ),
+            BoxShadow(
+              color: backgroundColor,
+              offset: Offset(-3.0, -3.0),
+              spreadRadius: -3.0,
+              blurRadius: 0,
+            ),
+          ],
         ),
-        boxShadow: [
-          BoxShadow(
-            color: shadowColor,
-            offset: Offset(0.0, 0.0),
-          ),
-          BoxShadow(
-            color: backgroundColor,
-            offset: Offset(-3.0, -3.0),
-            spreadRadius: -3.0,
-            blurRadius: 0,
-          ),
-        ],
+        child: child,
       ),
-      child: child,
     );
   }
 }

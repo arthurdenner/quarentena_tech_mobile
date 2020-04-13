@@ -5,6 +5,7 @@ const BASE_URL = 'https://quarentena.tech';
 class AppSizes {
   static const logo = 80.0;
   static const blur = 3.0;
+  static const border = 3.0;
 }
 
 class AppColors {

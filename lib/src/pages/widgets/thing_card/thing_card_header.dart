@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
+import 'package:quarentena_tech_mobile/src/widgets/nes_clipper.dart';
 
 class ThingCardHeader extends StatelessWidget {
   const ThingCardHeader({
@@ -39,17 +40,22 @@ class ThingCardHeader extends StatelessWidget {
   }
 
   Widget _buildCategory(String category) {
-    return Container(
-      color: getColorByCategory(category),
-      padding: EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 5,
+    return ClipPath(
+      clipper: const NESClipper(
+        radius: AppSizes.border * 2,
       ),
-      child: Text(
-        category,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 12,
+      child: Container(
+        color: getColorByCategory(category),
+        padding: EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 5,
+        ),
+        child: Text(
+          category,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 12,
+          ),
         ),
       ),
     );
