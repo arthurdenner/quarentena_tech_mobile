@@ -1,36 +1,21 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/animated_heart.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
-import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
+import 'package:quarentena_tech_mobile/src/widgets/nes_card.dart';
 
 class ProjectGoal extends StatelessWidget {
   const ProjectGoal({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final cardBg = Theme.of(context).brightness == Brightness.light
-        ? Colors.transparent
-        : Theme.of(context).cardColor;
-
     return Stack(
       children: <Widget>[
-        Container(
-          color: cardBg,
+        NESCard(
           margin: EdgeInsets.only(top: 10 - AppSizes.border),
-          padding: const EdgeInsets.all(AppSizes.border),
-          child: Container(
+          child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 30,
               vertical: 20,
-            ),
-            decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
-              border: Border.all(
-                color: getBorderColorByBrightness(context),
-                width: AppSizes.border,
-              ),
             ),
             child: Column(
               children: <Widget>[
