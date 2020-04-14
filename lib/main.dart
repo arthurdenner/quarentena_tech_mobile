@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:quarentena_tech_mobile/src/pages/home_page.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:theme_mode_handler/theme_mode_handler.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle.dark.copyWith(
+      statusBarColor: Colors.white,
+      statusBarBrightness: Brightness.light,
+    ),
+  );
+
   runApp(QuarentenaTech());
 }
 
