@@ -54,6 +54,7 @@ class ProjectFilters extends StatelessWidget {
       height: 80,
       margin: EdgeInsets.all(5),
       child: NESButton(
+        adjustable: false,
         backgroundColor: getColorByCategory(category),
         shadowColor: getDarkerColorByCategory(category),
         child: FlatButton(

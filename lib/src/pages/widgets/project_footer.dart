@@ -23,9 +23,15 @@ class ProjectFooter extends StatelessWidget {
             SizedBox(height: 10),
             GestureDetector(
               onTap: () => openUrl(AppLinks.discord),
-              child: Text('CollabCode'),
+              child: Text(
+                'CollabCode',
+                style: TextStyle(
+                  color: AppColors.main,
+                  fontSize: 18,
+                ),
+              ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

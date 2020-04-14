@@ -5,20 +5,24 @@ import 'package:quarentena_tech_mobile/src/widgets/nes_clipper.dart';
 class NESButton extends StatelessWidget {
   const NESButton({
     Key key,
+    this.adjustable: true,
     @required this.child,
     @required this.backgroundColor,
     @required this.shadowColor,
   }) : super(key: key);
 
+  final bool adjustable;
   final Widget child;
   final Color backgroundColor;
   final Color shadowColor;
 
   @override
   Widget build(BuildContext context) {
-    final clipper = Theme.of(context).brightness == Brightness.light
-        ? const NESClipper()
-        : null;
+    final clipper = adjustable
+        ? (Theme.of(context).brightness == Brightness.light
+            ? const NESClipper()
+            : null)
+        : const NESClipper();
 
     return ClipPath(
       clipper: clipper,
