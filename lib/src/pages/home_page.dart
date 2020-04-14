@@ -40,7 +40,6 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: <Widget>[
             ProjectAppBar(),
-            SizedBox(height: 20),
             Expanded(
               child: SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
@@ -49,7 +48,6 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: <Widget>[
                       ProjectGoal(),
-                      SizedBox(height: 30),
                       ThingsList(
                         status: _status,
                         things: _getThings(),

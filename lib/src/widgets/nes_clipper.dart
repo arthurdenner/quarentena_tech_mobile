@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 
 class NESClipper extends CustomClipper<Path> {
-  const NESClipper({this.radius = AppSizes.border});
+  const NESClipper({
+    this.radius,
+  });
 
   final double radius;
 
   @override
   Path getClip(Size size) {
+    final radius = this.radius ?? AppSizes.border;
     final path = Path();
     // TOP RIGHT
     path.lineTo(size.width - radius, 0.0);

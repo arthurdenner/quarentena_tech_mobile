@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/thing_card/thing_card_footer.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/thing_card/thing_card_header.dart';
-import 'package:quarentena_tech_mobile/src/utils/constants.dart';
-import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 import 'package:quarentena_tech_mobile/src/widgets/nes_card.dart';
 
 class ThingCard extends StatelessWidget {
@@ -17,7 +15,7 @@ class ThingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NESCard(
-      margin: EdgeInsets.only(bottom: 30),
+      margin: EdgeInsets.only(top: 20),
       child: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
