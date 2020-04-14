@@ -7,77 +7,79 @@ class NESCard extends StatelessWidget {
   const NESCard({
     Key key,
     @required this.child,
+    this.borderRadius: true,
     this.boxShadow,
-    this.margin,
+    this.margin: EdgeInsets.zero,
     this.radius: AppSizes.border,
   }) : super(key: key);
 
   final Widget child;
-  final EdgeInsetsGeometry margin;
+  final EdgeInsets margin;
   final List<BoxShadow> boxShadow;
+  final bool borderRadius;
   final double radius;
 
   @override
   Widget build(BuildContext context) {
     final gambiarra = _buildGambiarraDot(context);
+
+    if (!borderRadius) {
+      return _buildContent(context);
+    }
+
+    return Stack(
+      children: <Widget>[
+        _buildContent(context),
+        Positioned(
+          top: radius * 2 + margin.top,
+          left: radius * 2 + margin.left,
+          child: gambiarra,
+        ),
+        Positioned(
+          top: radius * 2 + margin.top,
+          right: radius * 2 + margin.right,
+          child: gambiarra,
+        ),
+        Positioned(
+          bottom: radius * 2 + margin.bottom,
+          right: radius * 2 + margin.right,
+          child: gambiarra,
+        ),
+        Positioned(
+          bottom: radius * 2 + margin.bottom,
+          left: radius * 2 + margin.left,
+          child: gambiarra,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildContent(BuildContext context) {
     final cardBg = Theme.of(context).brightness == Brightness.light
         ? Colors.transparent
         : Theme.of(context).cardColor;
 
-    return Stack(
-      children: <Widget>[
-        Container(
-          margin: margin,
-          padding: const EdgeInsets.all(AppSizes.border),
+    return Container(
+      margin: margin,
+      padding: EdgeInsets.all(radius),
+      decoration: BoxDecoration(
+        boxShadow: boxShadow,
+        color: cardBg,
+      ),
+      child: ClipPath(
+        clipper: NESClipper(radius: borderRadius ? radius * 2 : 0),
+        clipBehavior: Clip.hardEdge,
+        child: Container(
           decoration: BoxDecoration(
-            boxShadow: boxShadow,
-            color: cardBg,
-          ),
-          child: ClipPath(
-            clipper: NESClipper(radius: radius * 2),
-            clipBehavior: Clip.hardEdge,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).cardColor,
-                border: Border.all(
-                  color: getBorderColorByBrightness(context),
-                  width: AppSizes.border,
-                ),
-              ),
-              child: child,
+            color: Theme.of(context).cardColor,
+            border: Border.all(
+              color: getBorderColorByBrightness(context),
+              width: radius,
             ),
           ),
+          child: child,
         ),
-        Positioned(
-          top: radius * 2,
-          left: radius * 2,
-          child: Container(
-            height: radius,
-            width: radius,
-            color: getBorderColorByBrightness(context),
-          ),
-        ),
-        Positioned(
-          top: radius * 2,
-          left: radius * 2,
-          child: gambiarra,
-        ),
-        Positioned(
-          top: radius * 2,
-          right: radius * 2,
-          child: gambiarra,
-        ),
-        Positioned(
-          bottom: radius * 2,
-          right: radius * 2,
-          child: gambiarra,
-        ),
-        Positioned(
-          bottom: radius * 2,
-          left: radius * 2,
-          child: gambiarra,
-        ),
-      ],
+      ),
     );
   }
 
