@@ -30,7 +30,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
       endDrawer: ProjectDrawer(
         activeFilters: _activeFilters,
         onChangedFilter: _handleFilters,
@@ -44,6 +43,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20),
             Expanded(
               child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: Padding(
                   padding: EdgeInsets.all(20),
                   child: Column(

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/animated_heart.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
+import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 
 class ProjectGoal extends StatelessWidget {
   const ProjectGoal({Key key}) : super(key: key);
@@ -18,9 +19,9 @@ class ProjectGoal extends StatelessWidget {
             vertical: 20,
           ),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Theme.of(context).cardColor,
             border: Border.all(
-              color: Colors.black,
+              color: getBorderColorByBrightness(context),
               width: 3,
             ),
           ),
@@ -66,6 +67,7 @@ class ProjectGoal extends StatelessWidget {
                     ),
                   ],
                 ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 14),
               AnimatedHeart(),
@@ -75,7 +77,7 @@ class ProjectGoal extends StatelessWidget {
         Positioned(
           child: Center(
             child: Container(
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               padding: EdgeInsets.symmetric(horizontal: 8),
               child: Text(
                 'Objetivo',

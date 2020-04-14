@@ -16,8 +16,13 @@ class NESButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final clipper = Theme.of(context).brightness == Brightness.light
+        ? const NESClipper()
+        : null;
+
     return ClipPath(
-      clipper: const NESClipper(),
+      clipper: clipper,
+      clipBehavior: Clip.hardEdge,
       child: Container(
         height: 50,
         decoration: BoxDecoration(

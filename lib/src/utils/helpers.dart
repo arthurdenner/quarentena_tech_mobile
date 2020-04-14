@@ -16,6 +16,18 @@ Color getDarkerColorByCategory(String category) {
       : darkerColorMap['default'];
 }
 
+Color getCheckColorByBrightness(BuildContext context) {
+  return Theme.of(context).brightness == Brightness.light
+      ? null
+      : AppColors.baseDark;
+}
+
+Color getBorderColorByBrightness(BuildContext context) {
+  return Theme.of(context).brightness == Brightness.light
+      ? AppColors.baseDark
+      : AppColors.baseLight;
+}
+
 Future<void> openUrl(String url) async {
   try {
     final isValid = await canLaunch(url);

@@ -19,7 +19,12 @@ class ProjectFilters extends StatelessWidget {
       padding: EdgeInsets.all(20),
       child: Column(
         children: <Widget>[
-          Text('Categorias'),
+          Text(
+            'Categorias',
+            style: TextStyle(
+              color: AppColors.baseDark,
+            ),
+          ),
           SizedBox(height: 20),
           ...AppCategories.map(_buildCategory).toList(),
           SizedBox(height: 20),
@@ -28,7 +33,12 @@ class ProjectFilters extends StatelessWidget {
             shadowColor: Color(0xFFadafbc),
             child: FlatButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Filtrar'),
+              child: Text(
+                'Filtrar',
+                style: TextStyle(
+                  color: AppColors.baseDark,
+                ),
+              ),
             ),
           ),
         ],
@@ -61,7 +71,7 @@ class ProjectFilters extends StatelessWidget {
                 category,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.baseLight,
                   fontSize: 12,
                 ),
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
+import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 
 class ProjectAppBar extends StatelessWidget {
   ProjectAppBar({Key key}) : super(key: key);
@@ -8,9 +9,9 @@ class ProjectAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         border: Border.all(
-          color: Colors.black,
+          color: getBorderColorByBrightness(context),
           width: 3,
         ),
         boxShadow: [
@@ -92,7 +93,6 @@ class ProjectAppBar extends StatelessWidget {
     return Text(
       letter,
       style: TextStyle(
-        color: Colors.black,
         fontSize: 12,
       ),
     );

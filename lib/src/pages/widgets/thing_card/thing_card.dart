@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/thing_card/thing_card_footer.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/thing_card/thing_card_header.dart';
+import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 
 class ThingCard extends StatelessWidget {
   const ThingCard({
@@ -16,9 +17,9 @@ class ThingCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 30),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         border: Border.all(
-          color: Colors.black,
+          color: getBorderColorByBrightness(context),
           width: 3,
         ),
       ),

@@ -9,8 +9,11 @@ class AppSizes {
 }
 
 class AppColors {
-  static const body = Color(0xFF212529);
+  static const baseLight = Colors.white;
+  static const baseDark = Color(0xFF212529);
+  //
   static const background = Color(0xFFeae6da);
+  static const darkBackground = Color(0xFF3a4042);
   static const emphasis = Color(0xFF7c5e99);
   static const main = Color(0xFFf25a70);
   static const interactive = Color(0xFFf7d51d);
