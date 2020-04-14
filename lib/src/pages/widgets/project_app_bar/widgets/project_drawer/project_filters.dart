@@ -29,7 +29,7 @@ class ProjectFilters extends StatelessWidget {
           ...AppCategories.map(_buildCategory).toList(),
           SizedBox(height: 20),
           NESButton(
-            backgroundColor: Colors.white,
+            backgroundColor: AppColors.baseLight,
             shadowColor: Color(0xFFadafbc),
             child: FlatButton(
               onPressed: () => Navigator.of(context).pop(),
@@ -54,7 +54,6 @@ class ProjectFilters extends StatelessWidget {
       height: 80,
       margin: EdgeInsets.all(5),
       child: NESButton(
-        adjustable: false,
         backgroundColor: getColorByCategory(category),
         shadowColor: getDarkerColorByCategory(category),
         child: FlatButton(

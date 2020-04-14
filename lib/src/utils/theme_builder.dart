@@ -15,9 +15,6 @@ final lightTheme = ThemeData(
         color: AppColors.main,
         fontFamily: 'Press Start 2P',
       ),
-      headline3: TextStyle(
-        color: Colors.green,
-      ),
     ),
   ),
 );

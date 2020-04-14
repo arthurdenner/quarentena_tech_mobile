@@ -53,7 +53,7 @@ class ThingCardHeader extends StatelessWidget {
         child: Text(
           category,
           style: TextStyle(
-            color: Colors.white,
+            color: AppColors.baseLight,
             fontSize: 12,
           ),
         ),

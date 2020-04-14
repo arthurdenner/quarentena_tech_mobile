@@ -25,7 +25,7 @@ class DetailsButton extends StatelessWidget {
             child: Text(
               'Detalhes',
               style: TextStyle(
-                color: Colors.white,
+                color: AppColors.baseLight,
               ),
             ),
           ),
