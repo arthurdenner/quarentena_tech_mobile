@@ -24,6 +24,13 @@ class AppColors {
   static const menu = Color.fromARGB(230, 242, 90, 112);
 }
 
+class AppLinks {
+  static const discord = 'https://bit.ly/discord-collabcode';
+  static const github = 'https://github.com/collabcodetech';
+  static const twitch = 'https://twitch.tv/collabdode';
+  static const twitter = 'https://twitter.com/collabcodetech';
+}
+
 const AppCategories = ['cursos', 'twitch', 'youtube', 'comunidade'];
 
 Map<String, Color> colorMap = {

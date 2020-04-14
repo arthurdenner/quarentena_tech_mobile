@@ -51,6 +51,8 @@ class _HomePageState extends State<HomePage> {
                         status: _status,
                         things: _getThings(),
                       ),
+                      SizedBox(height: 20),
+                      ProjectFooter(),
                     ],
                   ),
                 ),
