@@ -68,12 +68,12 @@ class ThingCardHeader extends StatelessWidget {
       child: isSvg
           ? SvgPicture.network(
               getLogoUrl(thing.logo),
-              semanticsLabel: 'Logo de ${thing.title}',
+              semanticsLabel: thing.alt,
               height: AppSizes.logo,
             )
           : Image.network(
               getLogoUrl(thing.logo),
-              semanticLabel: 'Logo de ${thing.title}',
+              semanticLabel: thing.alt,
               height: AppSizes.logo,
             ),
     );
