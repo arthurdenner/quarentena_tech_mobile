@@ -5,7 +5,6 @@ import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_goal.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/things_list.dart';
 import 'package:quarentena_tech_mobile/src/services/api.dart';
-import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:theme_mode_handler/theme_mode_handler.dart';
 
 class HomePage extends StatefulWidget {
