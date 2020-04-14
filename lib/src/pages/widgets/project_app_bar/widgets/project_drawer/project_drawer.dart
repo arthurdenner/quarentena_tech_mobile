@@ -49,13 +49,15 @@ class ProjectDrawer extends StatelessWidget {
             checkColor: getCheckColorByBrightness(context),
           ),
         ),
-        GestureDetector(
-          onTap: () => Navigator.of(context).pop(),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(0, 10, 20, 0),
-            child: Image.asset(
-              'assets/img/close.png',
-              height: 40,
+        Flexible(
+          child: GestureDetector(
+            onTap: () => Navigator.of(context).pop(),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(30, 10, 20, 0),
+              child: Image.asset(
+                'assets/img/close.png',
+                height: 40,
+              ),
             ),
           ),
         ),

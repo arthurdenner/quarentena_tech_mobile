@@ -10,68 +10,76 @@ class ProjectGoal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cardBg = Theme.of(context).brightness == Brightness.light
+        ? Colors.transparent
+        : Theme.of(context).cardColor;
+
     return Stack(
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(top: 10),
-          padding: EdgeInsets.symmetric(
-            horizontal: 30,
-            vertical: 20,
-          ),
-          decoration: BoxDecoration(
-            color: Theme.of(context).cardColor,
-            border: Border.all(
-              color: getBorderColorByBrightness(context),
-              width: 3,
+          color: cardBg,
+          margin: EdgeInsets.only(top: 10 - AppSizes.border),
+          padding: const EdgeInsets.all(AppSizes.border),
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 20,
             ),
-          ),
-          child: Column(
-            children: <Widget>[
-              Text.rich(
-                TextSpan(
-                  text:
-                      'Nesse momento complicado que estamos passando, felizmente têm muitas'
-                      ' pessoas, comunidades e empresas realizando pequenos eventos,',
-                  style: TextStyle(
-                    height: 1.2,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: '100% online',
-                      style: TextStyle(
-                        color: AppColors.emphasis,
-                      ),
-                    ),
-                    TextSpan(
-                      text: ' e de ',
-                    ),
-                    TextSpan(
-                      text: 'graça',
-                      style: TextStyle(
-                        color: AppColors.emphasis,
-                      ),
-                    ),
-                    TextSpan(
-                      text: ' pra galera. A comunidade da ',
-                    ),
-                    TextSpan(
-                      text: 'CollabCode',
-                      style: TextStyle(
-                        color: AppColors.main,
-                      ),
-                    ),
-                    TextSpan(
-                      text: ' criou esse site com o objetivo de juntar todas '
-                          'essas iniciativas maravilhosas que estão nos ajudando a'
-                          'passar por essa crise de uma forma mais feliz!',
-                    ),
-                  ],
-                ),
-                textAlign: TextAlign.center,
+            decoration: BoxDecoration(
+              color: Theme.of(context).cardColor,
+              border: Border.all(
+                color: getBorderColorByBrightness(context),
+                width: AppSizes.border,
               ),
-              SizedBox(height: 14),
-              AnimatedHeart(),
-            ],
+            ),
+            child: Column(
+              children: <Widget>[
+                Text.rich(
+                  TextSpan(
+                    text:
+                        'Nesse momento complicado que estamos passando, felizmente têm muitas'
+                        ' pessoas, comunidades e empresas realizando pequenos eventos,',
+                    style: TextStyle(
+                      height: 1.2,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: '100% online',
+                        style: TextStyle(
+                          color: AppColors.emphasis,
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' e de ',
+                      ),
+                      TextSpan(
+                        text: 'graça',
+                        style: TextStyle(
+                          color: AppColors.emphasis,
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' pra galera. A comunidade da ',
+                      ),
+                      TextSpan(
+                        text: 'CollabCode',
+                        style: TextStyle(
+                          color: AppColors.main,
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' criou esse site com o objetivo de juntar todas '
+                            'essas iniciativas maravilhosas que estão nos ajudando a'
+                            'passar por essa crise de uma forma mais feliz!',
+                      ),
+                    ],
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 14),
+                AnimatedHeart(),
+              ],
+            ),
           ),
         ),
         Positioned(
