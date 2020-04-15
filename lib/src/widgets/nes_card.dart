@@ -59,9 +59,10 @@ class NESCard extends StatelessWidget {
         ? Colors.transparent
         : Theme.of(context).cardColor;
 
-    return Container(
+    return AnimatedContainer(
       margin: margin,
       padding: EdgeInsets.all(radius),
+      duration: defaultDuration,
       decoration: BoxDecoration(
         boxShadow: boxShadow,
         color: cardBg,
@@ -69,7 +70,8 @@ class NESCard extends StatelessWidget {
       child: ClipPath(
         clipper: NESClipper(radius: borderRadius ? radius * 2 : 0),
         clipBehavior: Clip.hardEdge,
-        child: Container(
+        child: AnimatedContainer(
+          duration: defaultDuration,
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
             border: Border.all(
@@ -84,10 +86,11 @@ class NESCard extends StatelessWidget {
   }
 
   Widget _buildGambiarraDot(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
       height: radius,
       width: radius,
       color: getBorderColorByBrightness(context),
+      duration: defaultDuration,
     );
   }
 }

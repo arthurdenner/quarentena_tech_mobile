@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 const BASE_URL = 'https://quarentena.tech';
 
+const defaultDuration = Duration(milliseconds: 100);
+
 class AppSizes {
   static const logo = 80.0;
   static const blur = 3.0;
@@ -33,7 +35,7 @@ class AppLinks {
 
 const AppCategories = ['cursos', 'twitch', 'youtube', 'comunidade'];
 
-Map<String, Color> colorMap = {
+const Map<String, Color> colorMap = {
   'default': Colors.red,
   'comunidade': Color(0xFF209cee),
   'cursos': Color(0xFF92cc41),
@@ -41,7 +43,7 @@ Map<String, Color> colorMap = {
   'youtube': AppColors.highlight,
 };
 
-Map<String, Color> darkerColorMap = {
+const Map<String, Color> darkerColorMap = {
   'default': Colors.red,
   'comunidade': Color(0xFF006bb3),
   'cursos': Color(0xFF4aa52e),

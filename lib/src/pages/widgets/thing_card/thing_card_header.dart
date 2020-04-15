@@ -44,7 +44,8 @@ class ThingCardHeader extends StatelessWidget {
       clipper: const NESClipper(
         radius: AppSizes.border * 2,
       ),
-      child: Container(
+      child: AnimatedContainer(
+        duration: defaultDuration,
         color: getColorByCategory(category),
         padding: EdgeInsets.symmetric(
           horizontal: 20,

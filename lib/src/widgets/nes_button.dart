@@ -19,8 +19,9 @@ class NESButton extends StatelessWidget {
     return ClipPath(
       clipper: const NESClipper(),
       clipBehavior: Clip.hardEdge,
-      child: Container(
+      child: AnimatedContainer(
         height: 50,
+        duration: defaultDuration,
         decoration: BoxDecoration(
           border: Border.all(
             color: AppColors.baseDark,

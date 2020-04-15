@@ -71,7 +71,8 @@ class ProjectGoal extends StatelessWidget {
         ),
         Positioned(
           child: Center(
-            child: Container(
+            child: AnimatedContainer(
+              duration: defaultDuration,
               color: Theme.of(context).cardColor,
               padding: EdgeInsets.symmetric(horizontal: 8),
               child: Text(
