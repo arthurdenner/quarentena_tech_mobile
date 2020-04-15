@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets/project_drawer/project_filter.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 import 'package:quarentena_tech_mobile/src/widgets/nes_button.dart';
@@ -34,7 +35,7 @@ class ProjectFilters extends StatelessWidget {
             child: FlatButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
-                'Filtrar',
+                'Fechar',
                 style: TextStyle(
                   color: AppColors.baseDark,
                 ),
@@ -47,38 +48,12 @@ class ProjectFilters extends StatelessWidget {
   }
 
   Widget _buildCategory(String category) {
-    final isSelected = activeFilters.contains(category);
-    final image = isSelected ? 'full' : 'empty';
-
-    return Container(
-      height: 80,
-      margin: EdgeInsets.all(5),
-      child: NESButton(
-        backgroundColor: getColorByCategory(category),
-        shadowColor: getDarkerColorByCategory(category),
-        child: FlatButton(
-          onPressed: () => onChangedFilter(category),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Image.asset(
-                'assets/img/$image-star.png',
-                height: 30,
-              ),
-              SizedBox(height: 10),
-              Text(
-                category,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: AppColors.baseLight,
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+    return ProjectFilter(
+      backgroundColor: getColorByCategory(category),
+      shadowColor: getDarkerColorByCategory(category),
+      onPressed: onChangedFilter,
+      isSelected: activeFilters.contains(category),
+      category: category,
     );
   }
 }
