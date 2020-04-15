@@ -18,6 +18,7 @@ environment:
 
 dependencies:
   dio: 3.0.9
+  cached_network_image: 2.1.0+1
   theme_mode_handler: 1.0.0
   url_launcher: 5.4.2
   flutter:

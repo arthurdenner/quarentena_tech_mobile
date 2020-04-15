@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
@@ -34,10 +35,12 @@ class ThingCardHeader extends StatelessWidget {
           ),
         ),
         ClipOval(
-          child: Image.network(
-            getLogoUrl(thing.logo),
-            semanticLabel: thing.alt,
-            height: AppSizes.logo,
+          child: Semantics(
+            label: thing.alt,
+            child: CachedNetworkImage(
+              imageUrl: getLogoUrl(thing.logo),
+              height: AppSizes.logo,
+            ),
           ),
         ),
       ],
