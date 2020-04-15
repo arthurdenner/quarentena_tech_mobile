@@ -24,7 +24,7 @@ class ProjectGoal extends StatelessWidget {
                   TextSpan(
                     text:
                         'Nesse momento complicado que estamos passando, felizmente têm muitas'
-                        ' pessoas, comunidades e empresas realizando pequenos eventos,',
+                        ' pessoas, comunidades e empresas realizando pequenos eventos, ',
                     style: TextStyle(
                       height: 1.2,
                     ),
@@ -56,7 +56,7 @@ class ProjectGoal extends StatelessWidget {
                       TextSpan(
                         text:
                             ' criou este aplicativo com o objetivo de juntar todas '
-                            'essas iniciativas maravilhosas que estão nos ajudando a'
+                            'essas iniciativas maravilhosas que estão nos ajudando a '
                             'passar por essa crise de uma forma mais feliz!',
                       ),
                     ],
