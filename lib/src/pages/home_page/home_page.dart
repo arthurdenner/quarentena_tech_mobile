@@ -5,6 +5,7 @@ import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/app_bar/proje
 import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/things_list/things_list.dart';
 import 'package:quarentena_tech_mobile/src/services/api.dart';
 import 'package:quarentena_tech_mobile/src/services/storage.dart';
+import 'package:quarentena_tech_mobile/src/widgets/error_alert.dart';
 import 'package:theme_mode_handler/theme_mode_handler.dart';
 
 class HomePage extends StatefulWidget {
@@ -69,15 +70,22 @@ class _HomePageState extends State<HomePage> {
       ]);
 
       setState(() {
-        _status = 'resolved';
+        _status = 'idle';
         _things = response.first;
       });
     } catch (e) {
-      setState(() {
-        _status = 'rejected';
-      });
-      // TODO: Improve error handling
       print(e);
+      setState(() => _status = 'rejected');
+      showDialog(
+        context: context,
+        builder: (_) => ErrorAlert(
+          message: e.message,
+          onClosed: () {
+            Navigator.of(context).pop();
+            setState(() => _status = 'idle');
+          },
+        ),
+      );
     }
   }
 

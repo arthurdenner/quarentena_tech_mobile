@@ -28,6 +28,10 @@ Color getBorderColorByBrightness(BuildContext context) {
       : AppColors.baseLight;
 }
 
+Color getTextColorByBrightness(BuildContext context) {
+  return getBorderColorByBrightness(context);
+}
+
 Future<void> openUrl(String url) async {
   try {
     final isValid = await canLaunch(url);

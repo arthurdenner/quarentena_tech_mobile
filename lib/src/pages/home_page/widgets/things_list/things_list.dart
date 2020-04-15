@@ -18,11 +18,8 @@ class ThingsList extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       child: Column(
         children: <Widget>[
-          if (status == 'pending')
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Text('Carregando items...'),
-            ),
+          if (status == 'pending') _buildLoader(),
+          if (status == 'rejected') _buildError(),
           ListView.builder(
             shrinkWrap: true,
             itemCount: things.length,
@@ -30,6 +27,34 @@ class ThingsList extends StatelessWidget {
             physics: BouncingScrollPhysics(),
           ),
         ],
+      ),
+    );
+  }
+
+  Padding _buildLoader() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+      child: Text(
+        'Carregando itens...',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          height: 1.2,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildError() {
+    final message = things.length > 0 ? 'atualizar' : 'obter';
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+      child: Text(
+        'Não foi possível $message os itens',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          height: 1.2,
+        ),
       ),
     );
   }
