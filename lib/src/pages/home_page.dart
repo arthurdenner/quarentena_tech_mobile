@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/project_app_bar.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets/project_drawer/project_drawer.dart';
-import 'package:quarentena_tech_mobile/src/pages/widgets/project_footer.dart';
-import 'package:quarentena_tech_mobile/src/pages/widgets/project_goal.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/things_list.dart';
 import 'package:quarentena_tech_mobile/src/services/api.dart';
 import 'package:theme_mode_handler/theme_mode_handler.dart';
@@ -41,21 +39,11 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             ProjectAppBar(),
             Expanded(
-              child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Column(
-                    children: <Widget>[
-                      ProjectGoal(),
-                      ThingsList(
-                        status: _status,
-                        things: _getThings(),
-                      ),
-                      SizedBox(height: 20),
-                      ProjectFooter(),
-                    ],
-                  ),
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                child: ThingsList(
+                  status: _status,
+                  things: _getThings(),
                 ),
               ),
             ),

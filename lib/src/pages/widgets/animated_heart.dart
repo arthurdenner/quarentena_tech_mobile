@@ -46,7 +46,7 @@ class _AnimatedHeartState extends State<AnimatedHeart>
         child: Image.asset(
           'assets/img/heart.png',
           excludeFromSemantics: true,
-          height: 48,
+          height: 50,
         ),
       ),
     );

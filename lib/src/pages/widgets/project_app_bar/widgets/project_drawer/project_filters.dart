@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets/project_drawer/project_filter.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
-import 'package:quarentena_tech_mobile/src/widgets/nes_button.dart';
 
 class ProjectFilters extends StatelessWidget {
   const ProjectFilters({
@@ -29,19 +28,6 @@ class ProjectFilters extends StatelessWidget {
           SizedBox(height: 20),
           ...AppCategories.map(_buildCategory).toList(),
           SizedBox(height: 20),
-          NESButton(
-            backgroundColor: AppColors.baseLight,
-            shadowColor: Color(0xFFadafbc),
-            child: FlatButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text(
-                'Fechar',
-                style: TextStyle(
-                  color: AppColors.baseDark,
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );

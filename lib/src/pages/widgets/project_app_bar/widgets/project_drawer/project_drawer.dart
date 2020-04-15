@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets/project_drawer/project_about.dart';
 import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets/project_drawer/project_filters.dart';
 import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 
@@ -28,6 +29,7 @@ class ProjectDrawer extends StatelessWidget {
               activeFilters: activeFilters,
               onChangedFilter: onChangedFilter,
             ),
+            ProjectAbout(),
           ],
         ),
       ),

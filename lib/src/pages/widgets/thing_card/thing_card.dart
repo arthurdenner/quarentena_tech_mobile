@@ -15,7 +15,7 @@ class ThingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NESCard(
-      margin: EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(bottom: 20),
       child: Padding(
         padding: EdgeInsets.all(20),
         child: Column(

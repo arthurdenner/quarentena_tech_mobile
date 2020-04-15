@@ -3,8 +3,8 @@ import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 import 'package:quarentena_tech_mobile/src/widgets/nes_card.dart';
 
-class ProjectFooter extends StatelessWidget {
-  const ProjectFooter({Key key}) : super(key: key);
+class ProjectCredits extends StatelessWidget {
+  const ProjectCredits({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class ProjectFooter extends StatelessWidget {
       child: Image.asset(
         'assets/img/$name.png',
         semanticLabel: 'Link para $name',
-        height: 60,
+        height: 50,
       ),
     );
   }

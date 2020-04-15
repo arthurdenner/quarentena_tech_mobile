@@ -15,17 +15,15 @@ class ThingsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (status == 'pending') {
-      return Container(
-        height: 100,
-        child: Center(
-          child: CircularProgressIndicator(),
-        ),
+      return Center(
+        child: CircularProgressIndicator(),
       );
     }
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: things.map((thing) => ThingCard(thing: thing)).toList(),
+    return ListView.builder(
+      itemCount: things.length,
+      itemBuilder: (_, index) => ThingCard(thing: things[index]),
+      physics: BouncingScrollPhysics(),
     );
   }
 }

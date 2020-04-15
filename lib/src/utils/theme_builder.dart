@@ -10,6 +10,10 @@ final lightTheme = ThemeData(
   scaffoldBackgroundColor: AppColors.background,
   toggleableActiveColor: AppColors.baseDark,
   appBarTheme: AppBarTheme(
+    color: AppColors.background,
+    iconTheme: IconThemeData(
+      color: AppColors.main,
+    ),
     textTheme: TextTheme(
       headline6: TextStyle(
         color: AppColors.main,
@@ -28,6 +32,10 @@ final darkTheme = ThemeData(
   scaffoldBackgroundColor: AppColors.darkBackground,
   toggleableActiveColor: AppColors.baseLight,
   appBarTheme: AppBarTheme(
+    color: AppColors.darkBackground,
+    iconTheme: IconThemeData(
+      color: AppColors.main,
+    ),
     textTheme: TextTheme(
       headline6: TextStyle(
         color: AppColors.main,
