@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
@@ -34,7 +33,13 @@ class ThingCardHeader extends StatelessWidget {
             ],
           ),
         ),
-        _buildImage(thing),
+        ClipOval(
+          child: Image.network(
+            getLogoUrl(thing.logo),
+            semanticLabel: thing.alt,
+            height: AppSizes.logo,
+          ),
+        ),
       ],
     );
   }
@@ -59,24 +64,6 @@ class ThingCardHeader extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildImage(Thing thing) {
-    final isSvg = thing.logo.contains('.svg');
-
-    return ClipOval(
-      child: isSvg
-          ? SvgPicture.network(
-              getLogoUrl(thing.logo),
-              semanticsLabel: thing.alt,
-              height: AppSizes.logo,
-            )
-          : Image.network(
-              getLogoUrl(thing.logo),
-              semanticLabel: thing.alt,
-              height: AppSizes.logo,
-            ),
     );
   }
 }
