@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 import 'package:quarentena_tech_mobile/src/widgets/nes_button.dart';
+import 'package:share/share.dart';
 
 class ShareButton extends StatelessWidget {
   const ShareButton({
     Key key,
     @required this.url,
+    this.subject,
   }) : super(key: key);
 
+  final String subject;
   final String url;
 
   @override
@@ -19,7 +22,10 @@ class ShareButton extends StatelessWidget {
         backgroundColor: AppColors.interactive,
         shadowColor: AppColors.interactiveSplash,
         child: FlatButton(
-          onPressed: () => shareToFacebook(url),
+          onPressed: () => Share.share(
+            url,
+            subject: subject,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

@@ -39,7 +39,3 @@ Future<void> openUrl(String url) async {
     print(e);
   }
 }
-
-Future<void> shareToFacebook(String url) {
-  return openUrl('http://www.facebook.com/sharer.php?u=$url');
-}

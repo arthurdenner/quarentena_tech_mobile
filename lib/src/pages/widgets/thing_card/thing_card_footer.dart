@@ -17,6 +17,7 @@ class ThingCardFooter extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         ShareButton(
+          subject: thing.title,
           url: thing.url,
         ),
         SizedBox(height: 15),
