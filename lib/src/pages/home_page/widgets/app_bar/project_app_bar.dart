@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/app_bar/project_menu.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/widgets/nes_card.dart';
 
@@ -54,43 +55,9 @@ class ProjectAppBar extends StatelessWidget {
                 ),
               ],
             ),
-            _buildMenu(context),
+            ProjectMenu(),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildMenu(BuildContext context) {
-    return GestureDetector(
-      onTap: () => Scaffold.of(context).openEndDrawer(),
-      child: Row(
-        children: <Widget>[
-          Image.asset(
-            'assets/img/heart.png',
-            excludeFromSemantics: true,
-            height: 45,
-          ),
-          SizedBox(width: 15),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _buildMenuLetter('M'),
-              _buildMenuLetter('E'),
-              _buildMenuLetter('N'),
-              _buildMenuLetter('U'),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMenuLetter(String letter) {
-    return Text(
-      letter,
-      style: TextStyle(
-        fontSize: 12,
       ),
     );
   }

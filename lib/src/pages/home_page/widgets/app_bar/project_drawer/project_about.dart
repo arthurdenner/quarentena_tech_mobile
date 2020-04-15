@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quarentena_tech_mobile/src/pages/about_page.dart';
+import 'package:quarentena_tech_mobile/src/pages/about_page/about_page.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/widgets/nes_button.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets/project_drawer/project_filter.dart';
+import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/app_bar/project_drawer/project_filter.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 import 'package:quarentena_tech_mobile/src/utils/helpers.dart';
 

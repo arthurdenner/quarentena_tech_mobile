@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:quarentena_tech_mobile/src/pages/home_page.dart';
+import 'package:quarentena_tech_mobile/src/pages/home_page/home_page.dart';
 import 'package:quarentena_tech_mobile/src/utils/theme_builder.dart';
 import 'package:theme_mode_handler/theme_mode_handler.dart';
 

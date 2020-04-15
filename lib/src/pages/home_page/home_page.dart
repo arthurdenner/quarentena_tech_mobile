@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
-import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/project_app_bar.dart';
-import 'package:quarentena_tech_mobile/src/pages/widgets/project_app_bar/widgets/project_drawer/project_drawer.dart';
-import 'package:quarentena_tech_mobile/src/pages/widgets/things_list.dart';
+import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/app_bar/project_app_bar.dart';
+import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/app_bar/project_drawer/project_drawer.dart';
+import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/things_list/things_list.dart';
 import 'package:quarentena_tech_mobile/src/services/api.dart';
 import 'package:theme_mode_handler/theme_mode_handler.dart';
 

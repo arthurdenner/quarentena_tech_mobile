@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
-import 'package:quarentena_tech_mobile/src/pages/widgets/thing_card/details_button.dart';
-import 'package:quarentena_tech_mobile/src/pages/widgets/thing_card/share_button.dart';
+import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/things_list/thing_card/details_button.dart';
+import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/things_list/thing_card/share_button.dart';
 
 class ThingCardFooter extends StatelessWidget {
   const ThingCardFooter({
