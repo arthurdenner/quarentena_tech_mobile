@@ -4,6 +4,7 @@ import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/app_bar/proje
 import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/app_bar/project_drawer/project_drawer.dart';
 import 'package:quarentena_tech_mobile/src/pages/home_page/widgets/things_list/things_list.dart';
 import 'package:quarentena_tech_mobile/src/services/api.dart';
+import 'package:quarentena_tech_mobile/src/services/storage.dart';
 import 'package:theme_mode_handler/theme_mode_handler.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _getItems();
+    _getThingsFromApi();
   }
 
   @override
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                 child: ThingsList(
                   status: _status,
-                  things: _getThings(),
+                  things: _filterThings(),
                 ),
               ),
             ),
@@ -53,14 +54,23 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future<void> _getItems() async {
+  Future<void> _getThingsFromApi() async {
     try {
-      setState(() => _status = 'pending');
-      final response = await _api.getThings();
+      final stored = await getStorageThings();
+
+      setState(() {
+        _status = 'pending';
+        _things = stored;
+      });
+
+      final response = await Future.wait<List<Thing>>([
+        _api.getThings(),
+        Future.delayed(Duration(milliseconds: 1500)),
+      ]);
 
       setState(() {
         _status = 'resolved';
-        _things = response;
+        _things = response.first;
       });
     } catch (e) {
       setState(() {
@@ -71,7 +81,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  List<Thing> _getThings() {
+  List<Thing> _filterThings() {
     if (_activeFilters.isEmpty) {
       return _things;
     }

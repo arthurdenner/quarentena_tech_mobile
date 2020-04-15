@@ -14,16 +14,23 @@ class ThingsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (status == 'pending') {
-      return Center(
-        child: CircularProgressIndicator(),
-      );
-    }
-
-    return ListView.builder(
-      itemCount: things.length,
-      itemBuilder: (_, index) => ThingCard(thing: things[index]),
+    return SingleChildScrollView(
       physics: BouncingScrollPhysics(),
+      child: Column(
+        children: <Widget>[
+          if (status == 'pending')
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text('Carregando items...'),
+            ),
+          ListView.builder(
+            shrinkWrap: true,
+            itemCount: things.length,
+            itemBuilder: (_, index) => ThingCard(thing: things[index]),
+            physics: BouncingScrollPhysics(),
+          ),
+        ],
+      ),
     );
   }
 }

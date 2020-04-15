@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:quarentena_tech_mobile/src/models/thing.dart';
+import 'package:quarentena_tech_mobile/src/services/storage.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 
 class Api {
@@ -16,6 +17,8 @@ class Api {
     for (final item in response.data) {
       things.add(Thing.fromJson(item));
     }
+
+    saveStorageThings(things);
 
     return things;
   }
