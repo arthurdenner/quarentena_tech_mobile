@@ -36,6 +36,7 @@ class ProjectFilter extends StatelessWidget {
             children: <Widget>[
               Image.asset(
                 'assets/img/$image-star.png',
+                excludeFromSemantics: true,
                 height: 30,
               ),
               SizedBox(height: 10),

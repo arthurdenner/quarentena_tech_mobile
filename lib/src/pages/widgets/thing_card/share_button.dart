@@ -32,6 +32,7 @@ class ShareButton extends StatelessWidget {
               SizedBox(width: 5),
               Image.asset(
                 'assets/img/heart.png',
+                excludeFromSemantics: true,
                 height: 30,
               ),
             ],

@@ -27,6 +27,7 @@ class ProjectAppBar extends StatelessWidget {
                   padding: EdgeInsets.only(top: 5),
                   child: Image.asset(
                     'assets/img/jedi.png',
+                    excludeFromSemantics: true,
                     height: 60,
                   ),
                 ),
@@ -67,6 +68,7 @@ class ProjectAppBar extends StatelessWidget {
         children: <Widget>[
           Image.asset(
             'assets/img/heart.png',
+            excludeFromSemantics: true,
             height: 45,
           ),
           SizedBox(width: 15),

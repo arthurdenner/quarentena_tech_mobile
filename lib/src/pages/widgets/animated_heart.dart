@@ -45,6 +45,7 @@ class _AnimatedHeartState extends State<AnimatedHeart>
         scale: _animation,
         child: Image.asset(
           'assets/img/heart.png',
+          excludeFromSemantics: true,
           height: 48,
         ),
       ),

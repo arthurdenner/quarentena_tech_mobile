@@ -56,6 +56,7 @@ class ProjectDrawer extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(30, 10, 20, 0),
               child: Image.asset(
                 'assets/img/close.png',
+                semanticLabel: 'Fechar menu',
                 height: 40,
               ),
             ),

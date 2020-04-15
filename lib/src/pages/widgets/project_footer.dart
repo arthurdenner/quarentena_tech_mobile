@@ -55,6 +55,7 @@ class ProjectFooter extends StatelessWidget {
       onTap: () => openUrl(url),
       child: Image.asset(
         'assets/img/$name.png',
+        semanticLabel: 'Link para $name',
         height: 60,
       ),
     );
