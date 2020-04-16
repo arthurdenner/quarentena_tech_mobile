@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         activeFilters: _activeFilters,
         onChangedFilter: _handleFilters,
         onChanged: _setTheme,
-        value: ThemeModeHandler.of(context).themeMode == ThemeMode.dark,
+        value: Theme.of(context).brightness == Brightness.dark,
       ),
       body: SafeArea(
         child: Column(
