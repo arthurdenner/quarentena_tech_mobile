@@ -16,6 +16,8 @@ class NESButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _offset = -1 * AppSizes.border;
+
     return ClipPath(
       clipper: const NESClipper(),
       clipBehavior: Clip.hardEdge,
@@ -34,8 +36,8 @@ class NESButton extends StatelessWidget {
             ),
             BoxShadow(
               color: backgroundColor,
-              offset: Offset(-3.0, -3.0),
-              spreadRadius: -3.0,
+              offset: Offset(_offset, _offset),
+              spreadRadius: _offset,
               blurRadius: 0,
             ),
           ],

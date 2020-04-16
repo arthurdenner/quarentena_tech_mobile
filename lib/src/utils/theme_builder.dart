@@ -1,46 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:quarentena_tech_mobile/src/utils/constants.dart';
 
-final lightTheme = ThemeData(
-  brightness: Brightness.light,
-  fontFamily: 'Press Start 2P',
-  dividerColor: AppColors.neutral,
-  canvasColor: AppColors.menu,
-  cardColor: AppColors.baseLight,
-  scaffoldBackgroundColor: AppColors.background,
-  toggleableActiveColor: AppColors.baseDark,
-  appBarTheme: AppBarTheme(
-    color: AppColors.background,
-    iconTheme: IconThemeData(
-      color: AppColors.main,
-    ),
-    textTheme: TextTheme(
-      headline6: TextStyle(
+ThemeData _buildTheme({Brightness brightness}) {
+  final isLight = brightness == Brightness.light;
+
+  return ThemeData(
+    brightness: brightness,
+    fontFamily: 'Press Start 2P',
+    dividerColor: AppColors.neutral,
+    canvasColor: AppColors.menu,
+    primaryColor: isLight ? AppColors.baseLight : AppColors.baseDark,
+    cardColor: isLight ? AppColors.baseLight : AppColors.baseDark,
+    scaffoldBackgroundColor:
+        isLight ? AppColors.background : AppColors.darkBackground,
+    toggleableActiveColor: isLight ? AppColors.baseDark : AppColors.baseLight,
+    appBarTheme: AppBarTheme(
+      color: isLight ? AppColors.background : AppColors.darkBackground,
+      iconTheme: IconThemeData(
         color: AppColors.main,
-        fontFamily: 'Press Start 2P',
+      ),
+      textTheme: TextTheme(
+        headline6: TextStyle(
+          color: AppColors.main,
+          fontFamily: 'Press Start 2P',
+        ),
       ),
     ),
-  ),
+  );
+}
+
+final lightTheme = _buildTheme(
+  brightness: Brightness.light,
 );
 
-final darkTheme = ThemeData(
+final darkTheme = _buildTheme(
   brightness: Brightness.dark,
-  fontFamily: 'Press Start 2P',
-  dividerColor: AppColors.neutral,
-  canvasColor: AppColors.menu,
-  cardColor: AppColors.baseDark,
-  scaffoldBackgroundColor: AppColors.darkBackground,
-  toggleableActiveColor: AppColors.baseLight,
-  appBarTheme: AppBarTheme(
-    color: AppColors.darkBackground,
-    iconTheme: IconThemeData(
-      color: AppColors.main,
-    ),
-    textTheme: TextTheme(
-      headline6: TextStyle(
-        color: AppColors.main,
-        fontFamily: 'Press Start 2P',
-      ),
-    ),
-  ),
 );
