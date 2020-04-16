@@ -43,7 +43,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.collabcode.quarentena_tech"
+        applicationId "com.collabcode.quarentenaTech"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()

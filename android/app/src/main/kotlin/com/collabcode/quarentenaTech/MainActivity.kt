@@ -1,4 +1,4 @@
-package com.collabcode.quarentena_tech
+package com.collabcode.quarentenaTech
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
