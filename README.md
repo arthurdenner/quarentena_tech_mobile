@@ -17,6 +17,16 @@
   <a href="#license" alt="License MIT"><img src="https://img.shields.io/github/license/CollabCodeTech/quarentena-tech?style=flat&color=2c9ceb" /></a>
 </p>
 
+## Design
+
+Inspired by the site, which uses the [NES.css](https://github.com/nostalgic-css/NES.css) framework.
+
+- [Home - Light theme](./.github/images/home-light.png)
+- [Home - Dark theme](./.github/images/home-dark.png)
+- [Drawer - Light theme](./.github/images/drawer-light.png)
+- [About - Light theme](./.github/images/about-light.png)
+- [About - Dark theme](./.github/images/about-dark.png)
+
 ## Getting Started
 
 ### Clone
