@@ -27,6 +27,10 @@ Inspired by the site, which uses the [NES.css](https://github.com/nostalgic-css/
 - [About - Light theme](./.github/images/about-light.png)
 - [About - Dark theme](./.github/images/about-dark.png)
 
+### Demo
+
+![Demo](./.github/demo.gif)
+
 ## Getting Started
 
 ### Clone
