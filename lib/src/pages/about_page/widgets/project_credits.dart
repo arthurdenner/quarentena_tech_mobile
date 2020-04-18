@@ -14,12 +14,7 @@ class ProjectCredits extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Criado pela comunidade',
-              style: TextStyle(
-                fontSize: 12,
-              ),
-            ),
+            Text('Criado pela comunidade'),
             SizedBox(height: 10),
             GestureDetector(
               onTap: () => openUrl(AppLinks.discord),

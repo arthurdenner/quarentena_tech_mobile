@@ -11,7 +11,7 @@ class ProjectGoal extends StatelessWidget {
     return Stack(
       children: <Widget>[
         NESCard(
-          margin: EdgeInsets.only(top: 10 - AppSizes.border),
+          margin: EdgeInsets.only(top: AppSizes.border),
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 30,

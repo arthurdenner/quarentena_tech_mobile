@@ -29,7 +29,7 @@ class AppColors {
 class AppLinks {
   static const discord = 'https://bit.ly/discord-collabcode';
   static const github = 'https://github.com/collabcodetech';
-  static const twitch = 'https://twitch.tv/collabdode';
+  static const twitch = 'https://twitch.tv/marcobrunodev';
   static const twitter = 'https://twitter.com/collabcodetech';
 }
 

@@ -34,6 +34,7 @@ class ThingCardHeader extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(width: 20),
         ClipOval(
           child: Semantics(
             label: thing.alt,
